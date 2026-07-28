@@ -260,3 +260,74 @@
 .marquee:hover {
   animation-play-state: paused;
 }
+
+/* Falling crystal particle background — transform + opacity only, GPU-composited */
+@keyframes crystal-fall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(55vh) translateX(var(--drift, 0px)) rotate(180deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(0) rotate(360deg);
+  }
+}
+
+.animate-crystal-fall {
+  animation-name: crystal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Gentle floating drift for accent icons/highlights */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float-y 4s ease-in-out infinite;
+}
+
+/* Soft pulsing glow for highlight elements */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.6s ease-in-out infinite;
+}
+
+/* Slow rotating shimmer ring */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-crystal-fall,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}
