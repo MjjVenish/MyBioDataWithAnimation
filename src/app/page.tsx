@@ -7,11 +7,13 @@ import Experience from '@/components/experience'
 import Contact from '@/components/contact'
 import Footer from '@/components/footer'
 import ScrollAnimation from '@/components/scroll-animation'
+import FallingCrystals from '@/components/effects/falling-crystals'
 
 export default function Page() {
   return (
     <main className="min-h-screen text-foreground overflow-x-hidden">
       <ScrollAnimation />
+      <FallingCrystals className="z-20" />
       <div className="relative z-10 bg-black/60">
         <Navbar />
         <Hero />

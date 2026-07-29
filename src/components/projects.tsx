@@ -13,6 +13,7 @@ const projects = [
     tags: ['React', 'Next.js', 'Socket.io', 'MongoDB'],
     gradient: 'from-blue-500 to-cyan-500',
     size: 'col-span-1 row-span-1 md:col-span-2',
+    repo: 'https://github.com/MjjVenish/MyScoreApp',
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const projects = [
     tags: ['Next.js', 'WebSocket', 'AI', 'Tailwind'],
     gradient: 'from-purple-500 to-pink-500',
     size: 'col-span-1 row-span-1 md:col-span-1',
+    repo: 'https://github.com/MjjVenish/MyChatAi',
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const projects = [
     tags: ['React', 'Framer Motion', 'Tailwind CSS'],
     gradient: 'from-green-500 to-emerald-500',
     size: 'col-span-1 row-span-1 md:col-span-1',
+    repo: 'https://github.com/MjjVenish/MyBioData',
   },
 ]
 
@@ -73,7 +76,10 @@ export default function Projects() {
               />
 
               {/* Card */}
-              <motion.div
+              <motion.a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="glass-strong rounded-2xl p-8 h-full flex flex-col justify-between relative z-10 cursor-pointer overflow-hidden"
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
@@ -123,7 +129,7 @@ export default function Projects() {
                     className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
                   />
                 </motion.div>
-              </motion.div>
+              </motion.a>
             </motion.div>
           ))}
         </div>

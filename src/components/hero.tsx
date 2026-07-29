@@ -70,7 +70,8 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <motion.button
+          <motion.a
+            href="#work"
             className="group relative overflow-hidden px-8 py-4 bg-white text-black rounded-full font-semibold flex items-center gap-2 hover:shadow-lg hover:shadow-blue-500/30 transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -84,15 +85,16 @@ export default function Hero() {
               className="absolute inset-0 bg-linear-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity"
               layoutId="buttonGlow"
             />
-          </motion.button>
+          </motion.a>
 
-          <motion.button
+          <motion.a
+            href="#contact"
             className="px-8 py-4 glass rounded-full font-semibold text-white hover:glow-accent-hover transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Get in Touch
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Scroll indicator */}
